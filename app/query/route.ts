@@ -13,14 +13,6 @@ async function listInvoices() {
 	return data;
 }
 
-async function resetDb() {
-  const data = await sql`
-    DROP table invoices;
-  `;
-
-  return data;
-}
-
 export async function GET() {
   try {
     return Response.json(await listInvoices());
